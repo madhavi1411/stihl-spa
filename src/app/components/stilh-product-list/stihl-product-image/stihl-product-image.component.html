@@ -1,0 +1,10 @@
+
+
+<img
+  *ngIf="src"
+  [attr.src]="src"
+  [attr.loading]="loadingStrategy"
+  (load)="loadHandler()"
+  (error)="errorHandler()"
+/>
+
