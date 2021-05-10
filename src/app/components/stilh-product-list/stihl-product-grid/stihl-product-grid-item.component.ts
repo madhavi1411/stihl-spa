@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductGridItemComponent } from '@spartacus/storefront';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { ICON_TYPE, ProductGridItemComponent } from '@spartacus/storefront';
+import { StihlProduct } from '../../../models/stihl-models';
 
 @Component({
   selector: 'app-stihl-product-grid-item',
@@ -7,5 +8,8 @@ import { ProductGridItemComponent } from '@spartacus/storefront';
   styleUrls: ['./stihl-product-grid-item.component.scss']
 })
 export class StihlProductGridItemComponent extends ProductGridItemComponent {
+
+  @Input() product: StihlProduct;
+  iconTypes = ICON_TYPE;
 
 }

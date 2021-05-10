@@ -15,8 +15,7 @@ import { Observable } from 'rxjs';
 export class StilhProductListComponent extends ProductListComponent {
 
 
-  model$: Observable<ProductSearchPage> = this.stihlproductListComponentService
-  .model$;
+  model$: Observable<ProductSearchPage> = this.stihlproductListComponentService.model$;
 
 viewMode$ = new BehaviorSubject<ViewModes>(ViewModes.Grid);
 ViewModes = ViewModes;

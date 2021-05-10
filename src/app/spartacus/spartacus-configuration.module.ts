@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { translationChunksConfig, translations } from "@spartacus/assets";
 import { FeaturesConfig, I18nConfig, OccConfig, provideConfig, SiteContextConfig } from "@spartacus/core";
-import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacus/storefront";
+import { defaultCmsContentProviders, IconModule, layoutConfig, mediaConfig } from '@spartacus/storefront';
 
 @NgModule({
   declarations: [],
@@ -16,11 +16,11 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
     },
   }), provideConfig(<SiteContextConfig>{
     context: {
-      urlParameters: ['baseSite', 'language', 'currency'],
+      urlParameters: ['baseSite'],
       currency: ['EUR',],
       language: ['fr_FR', 'en_GB'],
-      baseSite: ['stihl-b2c-fr-spa', 'electronics-spa']
-      },
+      baseSite: ['fr', 'electronics-spa']
+    },
       // context: {
       //   urlParameters: ['baseSite', 'language', 'currency'],
       //   baseSite: ['electronics-spa','apparel-uk-spa','powertools-spa'],
@@ -36,6 +36,7 @@ import { defaultCmsContentProviders, layoutConfig, mediaConfig } from "@spartacu
     features: {
       level: '3.2'
     }
-  })]
+  }),
+  IconModule]
 })
 export class SpartacusConfigurationModule { }

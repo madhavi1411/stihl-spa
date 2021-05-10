@@ -1,4 +1,4 @@
-
+<!--
 <a
   [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
   class="cx-product-image-container"
@@ -12,6 +12,7 @@
     [alt]="product.summary"
   ></app-stihl-product-image>
 </a>
+
 <a
   [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"
   class="cx-product-name"
@@ -46,6 +47,36 @@
     [product]="product"
   ></cx-add-to-cart>
 </ng-template>
+-->
 
+
+<ng-container *ngIf="product" class="grid-item">
+  <a [routerLink]="{ cxRoute: 'product', params: product } | cxUrl"  class="cx-product-image-container"
+     tabindex="-1">
+    <app-stihl-product-image
+      class="cx-product-image custom-css"
+      [container]="product.stihlimages?.PRIMARY"
+      [product]="product"
+      format="product"
+      [alt]="product.summary"></app-stihl-product-image>
+  </a>
+
+  <p> {{product.nameHtml}} </p>
+  <p> {{product.nameHtml}} - description description description description</p>
+  <p> {{product.nameHtml}} - subline subline subline subline subline</p>
+
+  <p class="stihl-instock"> <cx-icon class="instock-icon" [type]="iconTypes.CIRCLE"> </cx-icon> In stock</p>
+
+  <p> {{product.price?.formattedValue}}</p>
+
+  <cx-add-to-cart
+    *ngIf="product.stock?.stockLevelStatus !== 'outOfStock'"
+    [showQuantity]="false"
+    [product]="product">
+    <cx-icon class="instock-icon" [type]="iconTypes.CART"> </cx-icon>
+  </cx-add-to-cart>
+
+
+</ng-container>
 
 

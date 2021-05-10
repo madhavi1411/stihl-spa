@@ -18,4 +18,3 @@ export interface StihlProduct extends Product{
     stihlimages?: StihlImage[];
 }
 
-  
